@@ -6,6 +6,7 @@ import { HiMenuAlt1 } from 'react-icons/hi';
 import {BiPlayCircle} from 'react-icons/bi'
 
 
+
 export const useToggle = (initialState = false) =>  {
 	const [state, setState] = useState(initialState);
 
@@ -15,12 +16,13 @@ export const useToggle = (initialState = false) =>  {
 	return [state, toggle]
 }
 
-// export interface Props {
-// 	onClick : () => void
-// }
+
+
 
 export default function Navbar(){
-	const [isVisible, toggle] = useToggle();
+	const [isVisible, toggle]:any = useToggle();
+
+
 
 	return (
 		<>
@@ -48,11 +50,11 @@ export default function Navbar(){
 							</span>
 						</motion.button>
 					</div>
-					<div
+					<button
 						className='text-white text-3xl my-4 block md:block lg:hidden'
 						onClick={toggle}>
 						{isVisible ? <FaTimes /> : <HiMenuAlt1 />}
-					</div>
+					</button>
 				</div>
 			</nav>
 
